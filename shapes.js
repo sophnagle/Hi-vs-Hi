@@ -31,7 +31,12 @@ const renderer = Matter.Render.create({
 
 // have the ability to create a brand new shape
 const createShape = function (x, y) {
-    return Bodies.circle(x, y, 20 + 20 * Math.random());
+    return Bodies.circle(x, y, 20 + 20 * Math.random(), {
+        // edit the colour of the shape 
+        render: {
+            fillStyle: "red";
+        }
+    });
 }
 
 
