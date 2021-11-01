@@ -45,8 +45,20 @@ const bigBall = Bodies.circle(w / 2, h / 2, 250, {
         fillStyle: "#fff"
     }
 })
-// actually add it to the page
-World.add(engine.world, bigBall);
+
+const ground = Bodies.rectangle(w/2, h + 100, w + 100, 400, 100, {
+    isStatic: true,
+    render: {
+        visible: false
+    }
+});
+
+
+// actually add these to the page
+World.add(engine.world, [
+    bigBall,
+    ground
+]);
 
 
 // when we click the page, add a new shape
