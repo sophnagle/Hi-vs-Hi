@@ -6,7 +6,7 @@
 // const Engine = Matter.Engine;
 // const Render = Matter.Render;
 // The below is deconstructed of the above for simplification
-const {Engine, Render} = Matter 
+const {Engine, Render, Bodies, World} = Matter 
 
 // where is matter being deployed?
 const sectionTag = document.querySelector("section.shapes");
@@ -28,6 +28,30 @@ const renderer = Matter.Render.create({
         pixelRatio: window.devicePixelRatio
     }
 });
+
+// have the ability to create a brand new shape
+const createShape = function (x, y) {
+    return Bodies.circle(x, y, 20 + 20 * Math.random());
+}
+
+
+
+// when we click the page, add a new shape
+document.addEventListener("click", function (event) {
+    const shape = createShape(event.pageX, event.pageY);
+    World.add(engine.world, shape);
+})
+
+
+
+
+
+
+
+
+
+
+
 
 // run the engine and the renderer
 Engine.run(engine);
