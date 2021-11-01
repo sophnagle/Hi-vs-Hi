@@ -34,11 +34,19 @@ const createShape = function (x, y) {
     return Bodies.circle(x, y, 20 + 20 * Math.random(), {
         // edit the colour of the shape 
         render: {
-            fillStyle: "red";
+            fillStyle: "red"
         }
     });
 }
 
+const bigBall = Bodies.circle(w / 2, h / 2, 250, {
+    isStatic: true,
+    render: {
+        fillStyle: "#fff"
+    }
+})
+// actually add it to the page
+World.add(engine.world, bigBall);
 
 
 // when we click the page, add a new shape
