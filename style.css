@@ -2,7 +2,19 @@ body {
     font-family: Arial;
     font-size: 16px;
     line-height: 1.5;
-
     background-color: #fff;
     color: #333;
+}
+
+section.split {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    /* this will make the colour see through, giving us the two tone effect */
+    mix-blend-mode: difference; 
+    /* above means cant click as overlay, so below tells mouse to ignore this */
+    pointer-events: none;
 }

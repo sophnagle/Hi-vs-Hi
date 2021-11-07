@@ -93,7 +93,7 @@ World.add(engine.world, [
 document.addEventListener("click", function (event) {
     const shape = createShape(event.pageX, event.pageY);
     World.add(engine.world, shape);
-})
+}) 
 
 
 
