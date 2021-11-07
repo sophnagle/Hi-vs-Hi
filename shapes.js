@@ -6,7 +6,7 @@
 // const Engine = Matter.Engine;
 // const Render = Matter.Render;
 // The below is deconstructed of the above for simplification
-const {Engine, Render, Bodies, World, MouseConstraint} = Matter 
+const {Engine, Render, Bodies, World, MouseConstraint, Composites} = Matter 
 
 // where is matter being deployed?
 const sectionTag = document.querySelector("section.shapes");
@@ -32,6 +32,8 @@ const renderer = Matter.Render.create({
 // have the ability to create a brand new shape
 const createShape = function (x, y) {
     return Bodies.circle(x, y, 20 + 20 * Math.random(), {
+        // add friction to the elements to make them float
+        frictionAir: 0.05,
         // edit the colour of the shape 
         render: {
             fillStyle: "red"
@@ -67,6 +69,9 @@ const mouseControl = MouseConstraint.create(engine, {
     }
 })
 
+const initialShapes = Composites.stack(50, 50, 15, 5, 40, 40, function (x, y) {
+    return createShape(x, y)
+})
 
 // actually add these to the page
 World.add(engine.world, [
@@ -75,7 +80,8 @@ World.add(engine.world, [
     ceiling,
     leftWall,
     rightWall,
-    mouseControl
+    mouseControl,
+    initialShapes
 ])
 
 
