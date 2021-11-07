@@ -44,21 +44,29 @@ const bigBall = Bodies.circle(w / 2, h / 2, 250, {
     render: {
         fillStyle: "#fff"
     }
-})
+});
 
-const ground = Bodies.rectangle(w/2, h + 100, w + 100, 400, 100, {
+const wallOptions = {
     isStatic: true,
     render: {
         visible: false
     }
-});
+};
+
+const ground = Bodies.rectangle(w / 2, h + 100, w + 100, 400, 100, wallOptions);
+const ceiling = Bodies.rectangle(w / 2, -50, w + 100, 400, 100, wallOptions);
+const leftWall = Bodies.rectangle(-50, h / 2, 100, h + 100, wallOptions);
+const rightWall = Bodies.rectangle(w + 50, h / 2, 100, h + 100, wallOptions);
 
 
 // actually add these to the page
 World.add(engine.world, [
     bigBall,
-    ground
-]);
+    ground,
+    ceiling,
+    leftWall,
+    rightWall
+])
 
 
 // when we click the page, add a new shape
