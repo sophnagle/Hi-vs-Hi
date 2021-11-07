@@ -45,7 +45,7 @@ const createShape = function (x, y) {
     });
 }
 
-const bigBall = Bodies.circle(w / 2, h / 2, 250, {
+const bigBall = Bodies.circle(w / 2, h / 2, Math.min(w/4, h/4), {
     isStatic: true,
     render: {
         fillStyle: "#fff"
@@ -103,6 +103,7 @@ Engine.run(engine);
 Render.run(renderer);
 
 
+
 // Adding gravity to the site using cosine wave
 let time = 0;
 const chnageGravity = function () {
@@ -110,5 +111,11 @@ const chnageGravity = function () {
     engine.world.gravity.y = Math.cos(time)
     requestAnimationFrame(chnageGravity)
 };
-chnageGravity();
+chnageGravity(); 
 
+
+/* this is for older apple devices as functionality has been removed 2019 
+window.addEventListener("deviceorientation", function (event) {
+    engine.world.gravity.x = event.gamma / 30
+    engine.world.gravity.y = event.beta / 30
+}) */
