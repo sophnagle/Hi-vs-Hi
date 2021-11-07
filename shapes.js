@@ -31,12 +31,16 @@ const renderer = Matter.Render.create({
 
 // have the ability to create a brand new shape
 const createShape = function (x, y) {
-    return Bodies.circle(x, y, 20 + 20 * Math.random(), {
+    return Bodies.rectangle(x, y, 38, 50, {
         // add friction to the elements to make them float
         frictionAir: 0.05,
         // edit the colour of the shape 
         render: {
-            fillStyle: "red"
+            sprite: {
+                texture: "outline-2x.png",
+                xScale: 0.5,
+                yScale: 0.5
+            }
         }
     });
 }
