@@ -53,8 +53,8 @@ const wallOptions = {
     }
 };
 
-const ground = Bodies.rectangle(w / 2, h + 100, w + 100, 400, 100, wallOptions);
-const ceiling = Bodies.rectangle(w / 2, -50, w + 100, 400, 100, wallOptions);
+const ground = Bodies.rectangle(w / 2, h + 50, w + 100, 100, wallOptions);
+const ceiling = Bodies.rectangle(w / 2, -50, w + 100, 100, wallOptions);
 const leftWall = Bodies.rectangle(-50, h / 2, 100, h + 100, wallOptions);
 const rightWall = Bodies.rectangle(w + 50, h / 2, 100, h + 100, wallOptions);
 
