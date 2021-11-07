@@ -18,3 +18,5 @@ BLACK
 
 WHITE
 #ffffff
+
+Note that MatterJS docs are not super clear and need to check rules and docs :)

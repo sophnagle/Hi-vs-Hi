@@ -6,7 +6,7 @@
 // const Engine = Matter.Engine;
 // const Render = Matter.Render;
 // The below is deconstructed of the above for simplification
-const {Engine, Render, Bodies, World} = Matter 
+const {Engine, Render, Bodies, World, MouseConstraint} = Matter 
 
 // where is matter being deployed?
 const sectionTag = document.querySelector("section.shapes");
@@ -58,6 +58,15 @@ const ceiling = Bodies.rectangle(w / 2, -50, w + 100, 100, wallOptions);
 const leftWall = Bodies.rectangle(-50, h / 2, 100, h + 100, wallOptions);
 const rightWall = Bodies.rectangle(w + 50, h / 2, 100, h + 100, wallOptions);
 
+const mouseControl = MouseConstraint.create(engine, {
+    element: sectionTag,
+    constraint: {
+        render: {
+            visible: false
+        }
+    }
+})
+
 
 // actually add these to the page
 World.add(engine.world, [
@@ -65,7 +74,8 @@ World.add(engine.world, [
     ground,
     ceiling,
     leftWall,
-    rightWall
+    rightWall,
+    mouseControl
 ])
 
 
