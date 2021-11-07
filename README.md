@@ -20,3 +20,7 @@ WHITE
 #ffffff
 
 Note that MatterJS docs are not super clear and need to check rules and docs :)
+
+## Debugging
+
+Note that a user cannot right click, becuase of the click event that creates a shape.

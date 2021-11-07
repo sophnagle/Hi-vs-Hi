@@ -98,15 +98,17 @@ document.addEventListener("click", function (event) {
 
 
 
-
-
-
-
-
-
-
-
 // run the engine and the renderer
 Engine.run(engine);
 Render.run(renderer);
+
+
+// Adding gravity to the site using cosine wave
+let time = 0;
+const chnageGravity = function () {
+    time = time + 0.01;
+    engine.world.gravity.y = Math.cos(time)
+    requestAnimationFrame(chnageGravity)
+};
+chnageGravity();
 
