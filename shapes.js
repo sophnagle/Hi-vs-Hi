@@ -41,6 +41,13 @@ const createShape = function (x, y) {
                 xScale: 0.5,
                 yScale: 0.5
             }
+        }, 
+        // this wraps the items so they are not lost off the page
+        plugin: {
+            wrap: {
+                min: {x: 0, y: 0},
+                max: {x: w, y: h}
+            }
         }
     });
 }
