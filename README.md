@@ -2,15 +2,20 @@
 
 The is Project 2 in the SuperHi Experimental JavaScript course. Using Matter.js, I add a physics collision engine to the site to make the shapes collide, be dragged and have gravity.
 
-https://brm.io/matter-js/ 
+the live project can be found here: 
+
+[Hi vs Hi](https://sophnagle.github.io/Hi-vs-Hi/)
+
+Here is the link to Matter JS: 
+
+[Matter JS](https://brm.io/matter-js)
 
 Ideas taken from other engines too: 
 Pts library
 plank.js
 Box2d
 
-Gravity orientation - this is not supported in Safari or apple ios. It is currently commented out but left for info
-https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event
+Gravity orientation - this is not supported in Safari or apple ios. It is currently commented out but left for info [Orientation link](https://developer.mozilla.org/en-US/docs/Web/API/Window/deviceorientation_event)
 
 ## Project info
 
